@@ -1,5 +1,6 @@
 package com.ubs.opsit.interviews;
 
+import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.junit.Test;
@@ -23,6 +24,11 @@ public class BerlinClockFixture {
                 .withStory("berlin-clock.story")
                 .run();
     }
+
+   @Given("berlin clock")
+   public void givenBerlinClock() {
+      berlinClock = new BerlinClock();
+   }
 
     @When("the time is $time")
     public void whenTheTimeIs(String time) {
